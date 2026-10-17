@@ -38,7 +38,7 @@ public class AutherController {
    public void registeruser(User user){
         usercheck(user);
         if(user.getPassword().length()<minPasswordLength){
-            throw new IllegalArgumentException("密码的长度应为"+minPasswordLength+",请重新输入");
+            throw new IllegalArgumentException("密码的最小长度应为"+minPasswordLength+",请重新输入");
         }
         if(!user.getName().matches(usernamePattern)){
             throw new IllegalArgumentException("用户名不符合规则："+usernamePattern);
