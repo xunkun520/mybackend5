@@ -11,6 +11,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handle1(IllegalArgumentException e) {
     return ResponseEntity.badRequest().body(e.getMessage());
 }
+    @ExceptionHandler(IOException.class)
    public ResponseEntity<String> handle2(IOException e) {
     return ResponseEntity.internalServerError().body("用户文件读取或保存失败");
    }
